@@ -150,10 +150,44 @@
     }
 
     @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-      }
-    }
+  .gallery-scroll {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .gallery-item {
+    flex: 0 0 90%;
+    margin-right: 10px;
+    scroll-snap-align: start;
+  }
+
+  .gallery-item img {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .gallery-nav {
+    display: none; /* спрятать стрелки на мобилках */
+  }
+
+  .laser_text {
+    font-size: 36px;
+  }
+
+  .hero-text {
+    padding: 30px 20px;
+  }
+
+  .advantages ul {
+    padding-left: 15px;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
   </style>
 </head>
 <body>
