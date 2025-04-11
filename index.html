@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Лазеркрафт</title>
-  <link rel="preload" href="ds_army_cyr.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <style>
     body {
       margin: 0;
@@ -15,7 +14,7 @@
 
     .laser_text {
       font-size: 64px;
-      font-family: 'DS Army Cyr', sans-serif;
+      font-family: 'DS Army Cyr';
       text-align: center;
     }
 
@@ -149,13 +148,14 @@
       color: #fdd835;
       text-decoration: none;
     }
-    @font-face {
-      font-family: 'DS Army Cyr';
-      src: url('ds_army_cyr.woff') format('woff'),
-      url('ds_army_cyr.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+@font-face {
+  font-family: 'DS Army Cyr';
+  src: url('fonts/dsarmy.woff2') format('woff2'),
+       url('fonts/dsarmy.woff') format('woff'),
+       url('fonts/dsarmy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
     @media (max-width: 768px) {
   .gallery-scroll {
