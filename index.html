@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Лазеркрафт</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    .laser_text {
+      font-size: 64px;
+      font-family: 'DS Army Cyr';
+      text-align: center;
+    }
+
+    /* Приветственный блок */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 400px;
+      margin-top: 100px;
+    }
+
+    .hero-text, .hero-img {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      margin: 10px 0;
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+      max-width: 450px;
+    }
+
+    .hero-img {
+      background-image: url('photo 1.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Галерея */
+    .gallery-section {
+      padding: 50px 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .gallery-container {
+      position: relative;
+      max-width: fit-content;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .gallery-scroll {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .gallery-item {
+      flex: 0 0 500px;
+      margin-right: 20px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .gallery-caption {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #555;
+      text-align: center;
+    }
+
+
+    .gallery-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.8);
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .gallery-prev {
+      left: 0;
+    }
+
+    .gallery-next {
+      right: 0;
+    }
+
+    /* Преимущества и контакты */
+    .advantages {
+      background: #eee;
+      padding: 50px 20px;
+    }
+
+    .advantages h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .advantages ul {
+      max-width: 800px;
+      margin: auto;
+      padding-left: 20px;
+      list-style-type: disc;
+    }
+
+    .advantages li {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fdd835;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1 class="laser_text">Лазеркрафт</h1>
+    <h1>Мастерская подарков и сувениров</h1>
+    <p>Персонализированные изделия из фанеры, оргстекла и акрила</p>
+  </div>
+  <div class="hero-img"></div>
+</section>
+
+<section class="gallery-section">
+  <h2>Примеры наших работ</h2>
+  <div class="gallery-container">
+    <button class="gallery-nav gallery-prev" onclick="scrollGallery(-1)">‹</button>
+    <div class="gallery-scroll" id="galleryScroll">
+      <div class="gallery-item">
+        <img src="photo_2025-04-04_21-22-50.jpg" alt="Работа 1" />
+        <p class="gallery-caption">Подставка "2025", акрил</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo_2025-04-04_21-22-51 (2).jpg" alt="Работа 2" />
+        <p class="gallery-caption">Календарь "Улан-Удэнский авиационный завод", фанера</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo_2025-04-04_21-23-33.jpg" alt="Работа 3" />
+        <p class="gallery-caption">Сувенир "Дракон", оргстекло</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo_2025-04-04_21-22-54.jpg" alt="Работа 4" />
+        <p class="gallery-caption">Подставка для телефона "Год дракона", фанера</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo_2025-04-09_20-25-23.jpg" alt="Работа 5" />
+        <p class="gallery-caption">Пано "Железный Арни", фанера ФК 4 мм</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo_2025-04-10_21-20-33.jpg" />
+        <p class="gallery-caption">Подставка для телефона с заказной гравировкой, фанера</p>
+      </div>
+      <div class="gallery-item">
+        <img src="photo_2025-04-04_21-23-28.jpg" />
+        <p class="gallery-caption">Календарь "С новым 2025 годом", фанера</p></div>
+    </div>    
+    <button class="gallery-nav gallery-next" onclick="scrollGallery(1)">›</button>
+  </div>
+</section>
+
+<section class="advantages">
+  <h2>Почему выбирают нас</h2>
+  <ul>
+    <li>Высокая точность и детальность</li>
+    <li>Долговечность изображения</li>
+    <li>Работа с различными материалами: фанера, оргстекло, акрил</li>
+    <li>Индивидуальный подход к каждому заказу</li>
+    <li>Изготовление под корпоративные мероприятия и личные поводы</li>
+    <li>Лазерная резка: детали моделей, декоративные элементы, цветы</li>
+    <li>Уникальные сувениры и персонализированные подарки</li>
+  </ul>
+</section>
+
+<footer>
+  <p><strong>Контакты</strong></p>
+  <p>Телефон: <a href="tel:+79244587009">+7 (924) 458-70-09</a></p>
+  <p>Telegram: <a href="https://t.me/Nornbob" target="_blank">написать</a></p>
+  <p>© 2025 Мастерская подарков и сувениров "Лазеркрафт"</p>
+</footer>
+
+<script>
+    let currentIndex = 0;
+
+    function scrollGallery(direction) {
+      const gallery = document.getElementById('galleryScroll');
+      const items = gallery.querySelectorAll('.gallery-item');
+      const visibleCount = 3;
+      const itemWidth = items[0].offsetWidth + 20; // включая отступ
+
+      const maxIndex = items.length - visibleCount;
+      currentIndex = Math.max(0, Math.min(currentIndex + direction, maxIndex));
+
+      gallery.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+
+</script>
+
+
+</body>
+</html>
